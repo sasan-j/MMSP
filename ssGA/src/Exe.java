@@ -29,12 +29,12 @@ public class Exe
     double pc         = 0.8;                          // Crossover probability
     double pm  = 1.0/(double)((double)gn*(double)gl); // Mutation probability
     double tf         = (double)gn*gl ;               // Target fitness being sought
-    long   MAX_ISTEPS = 50000;
+    long   MAX_ISTEPS = 10000;
     
     Problem   problem;                             // The problem being solved
 
     // problem = new ProblemPPeaks(); 
-    problem = new ProblemOneMax();
+    problem = new ProblemPPeaks();
     
     problem.set_geneN(gn);
     problem.set_geneL(gl);
