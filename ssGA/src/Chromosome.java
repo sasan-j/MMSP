@@ -23,11 +23,18 @@ public class Chromosome implements Serializable
 
     alleles = new byte[length];
     L = length;
-    for (int i=0; i<length; i++)
-    if(r.nextDouble()>0.5)          // Returns values in [0..1]
-    alleles[i] = 1;
-    else
-    alleles[i] = 0;
+    for (int i=0; i<length; i++){
+    //if(r.nextDouble()>0.5)          // Returns values in [0..1]
+    //alleles[i] = 1;
+    //else
+    //alleles[i] = 0;
+    	double start = 0;
+    	double end = 16;
+    	double random = new Random().nextDouble();
+    	double result = start + (random * (end - start));
+    	alleles[i]=(byte)result;
+	}
+    	
   }
 
   public void set_allele(int index, byte value)
