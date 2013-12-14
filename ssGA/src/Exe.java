@@ -38,13 +38,16 @@ public class Exe
     int    popsize    = 512;                          // Population size
     double pc         = 0.8;                          // Crossover probability
     double pm  = 1.0/(double)((double)gn*(double)gl); // Mutation probability
-    double tf         = (double)gn*gl ;               // Target fitness being sought
-    long   MAX_ISTEPS = 10000;
+    double tf         = (double)0.0 ;               // Target fitness being sought
+    long   MAX_ISTEPS = 1000000;
     
     Problem   problem;                             // The problem being solved
 
     // problem = new ProblemPPeaks(); 
-    problem = new ProblemPPeaks();
+    //problem = new ProblemPPeaks();
+    problem = new ProblemMMSP("u_s_lolo_512_16.txt");
+    //InstanceParser ip = new InstanceParser("u_c_hihi_512_16.txt");
+    //ip.readInstanceFile();
     
     problem.set_geneN(gn);
     problem.set_geneL(gl);
@@ -63,7 +66,7 @@ public class Exe
       System.out.println(ga.get_bestf());
 
       if(     (problem.tf_known())                    &&
-      (ga.get_solution()).get_fitness()>=problem.get_target_fitness()
+      (ga.get_solution()).get_fitness()<=problem.get_target_fitness()
       )
       { System.out.print("Solution Found! After ");
         System.out.print(problem.get_fitness_counter());

@@ -35,7 +35,9 @@ public class Population
 
     // Initialize statistics
     bestp = 0;     worstp = 0;
-    bestf = 0.0;   avgf   = 0.0;   worstf = 9999999999.0;    BESTF = 0.0;
+//    bestf = 0.0;   avgf   = 0.0;   worstf = 9999999999.0;    BESTF = 0.0;
+    bestf = 9999999999.0;   avgf   = 0.0;   worstf =  0.0;   BESTF = 9999999999.0;
+
   }
 
   public int get_popsize()
@@ -84,9 +86,9 @@ public class Population
 
     for(int i=0;i<popsize;i++)
     {   f = pop[i].get_fitness();
-    if(f<=worstf) {worstf = f; worstp = i;}
-    if(f>=bestf)  {bestf  = f; bestp  = i;}
-    if(f>=BESTF)  {BESTF  = f;            }
+    if(f>=worstf) {worstf = f; worstp = i;}
+    if(f<=bestf)  {bestf  = f; bestp  = i;}
+    if(f<=BESTF)  {BESTF  = f;            }
       total += f;
     }
 

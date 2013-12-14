@@ -57,7 +57,7 @@ public class Algorithm
       if(p2>popsize-1) p2=popsize-1;
     }
     while (p1==p2);
-    if (pop.get_ith(p1).get_fitness()>pop.get_ith(p2).get_fitness())
+    if (pop.get_ith(p1).get_fitness()<pop.get_ith(p2).get_fitness())
     return pop.get_ith(p1);
     else
     return pop.get_ith(p2);
@@ -143,7 +143,7 @@ public class Algorithm
   public void replace(Individual new_indiv) throws Exception
   {
     pop.set_ith(pop.get_worstp(),new_indiv);
-    //pop.compute_stats();                  // Recompute avg, best, worst, etc.
+    pop.compute_stats();                  // Recompute avg, best, worst, etc.
   }
 
   // EVALUATE THE FITNESS OF AN INDIVIDUAL
