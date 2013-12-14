@@ -90,7 +90,33 @@ public class Algorithm
     return aux_indiv;
   }
 
+  
+  // MUTATE A INT CHROMOSOME
+  public Individual mutate(Individual p1)
+  {
+    byte alelle=0;
+    Random r = new Random();
 
+	double start = 0;
+	double end = 16;
+	byte result;// = start + (r.nextDouble() * (end - start));
+	
+    
+    aux_indiv.assign(p1);
+
+    for(int i=0; i<chrom_length; i++)
+    if (r.nextDouble()<=pm)  // Check mutation bit by bit...
+    {
+    	do{
+    		result=(byte)(start + (r.nextDouble() * (end - start)));
+    	}while(aux_indiv.get_allele(i)==result);
+    	aux_indiv.set_allele(i,result);
+    }
+
+    return aux_indiv;
+  }
+  
+/*
   // MUTATE A BINARY CHROMOSOME
   public Individual mutate(Individual p1)
   {
@@ -111,6 +137,7 @@ public class Algorithm
     return aux_indiv;
 
   }
+ */
 
   // REPLACEMENT - THE WORST INDIVIDUAL IS ALWAYS DISCARDED
   public void replace(Individual new_indiv) throws Exception

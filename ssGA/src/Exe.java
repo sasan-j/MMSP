@@ -20,9 +20,19 @@ public class Exe
     double pm  = 1.0/(double)((double)gn*(double)gl); // Mutation probability
     double tf         = (double)1 ;              // Target fitness beign sought
     long   MAX_ISTEPS = 50000;
-*/
+
       
     // PARAMETERS ONEMAX
+    int    gn         = 512;                          // Gene number
+    int    gl         = 1;                            // Gene length
+    int    popsize    = 512;                          // Population size
+    double pc         = 0.8;                          // Crossover probability
+    double pm  = 1.0/(double)((double)gn*(double)gl); // Mutation probability
+    double tf         = (double)gn*gl ;               // Target fitness being sought
+    long   MAX_ISTEPS = 10000;
+   */
+	  
+    // PARAMETERS MMSP
     int    gn         = 512;                          // Gene number
     int    gl         = 1;                            // Gene length
     int    popsize    = 512;                          // Population size
