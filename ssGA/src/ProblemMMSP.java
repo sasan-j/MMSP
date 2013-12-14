@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.Collections;
 
 public class ProblemMMSP extends Problem {
 
@@ -10,13 +13,28 @@ public class ProblemMMSP extends Problem {
 	
 	@Override
 	public double Evaluate(Individual indiv) {
+		
+		double[] execTimeArray = new double[16];
 		// TODO Auto-generated method stub
 		double totalExecTime=0.0;
 		for(int i=0;i<CL;i++){
-			totalExecTime+=instanceParser.getInstanceValue(i,indiv.get_allele(i));
+			int _machine = indiv.get_allele(i);
+			execTimeArray[_machine]+=instanceParser.getInstanceValue(i,_machine);
 		}
-		
-		return totalExecTime;
+
+		return getMaxValue(execTimeArray);
 	}
+	
+	// getting the maximum value
+	public static double getMaxValue(double[] array){  
+	      double maxValue = array[0];  
+	      for(int i=1;i < array.length;i++){  
+	      if(array[i] > maxValue){  
+	      maxValue = array[i];  
+
+	        }  
+	     }  
+	             return maxValue;  
+	} 
 
 }
