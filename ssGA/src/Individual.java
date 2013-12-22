@@ -15,9 +15,9 @@ public class Individual implements Serializable
   private int        L;
   private double     fitness;
 
-  public Individual(int L)
+  public Individual(int L, int indiNo)
   {
-     chrom   = new Chromosome(L);
+     chrom   = new Chromosome(L,indiNo);
      fitness = 0.0;
      this.L  = L;
   }

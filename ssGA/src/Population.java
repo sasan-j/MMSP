@@ -31,7 +31,7 @@ public class Population
     pop          = new Individual[popsize];
     chrom_length = chroml;
 
-    for(int i=0;i<popsize;i++)  pop[i] = new Individual(chroml);
+    for(int i=0;i<popsize;i++)  pop[i] = new Individual(chroml,i);
 
     // Initialize statistics
     bestp = 0;     worstp = 0;

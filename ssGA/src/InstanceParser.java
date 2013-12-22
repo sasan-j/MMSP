@@ -14,8 +14,8 @@ public class InstanceParser {
 		fileName = _instance_name;
 		executionTimeVectors = new double[512][16];
 		
-	     System.out.println("Working Directory = " +
-	              System.getProperty("user.dir"));
+	     //System.out.println("Working Directory = " +
+	     //         System.getProperty("user.dir"));
 	}
 
 	void readInstanceFile(){
@@ -57,7 +57,7 @@ public class InstanceParser {
 			}
 		}
 	 
-		System.out.println("Done");
+		//System.out.println("Done");
 		
 		
 	}

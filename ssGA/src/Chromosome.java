@@ -14,15 +14,16 @@ public class Chromosome implements Serializable
 {
   private byte alleles[];		// Allele vector
   private int  L;			// Length of the allele vector
-  private static Random r = new Random(); // Only the first time it is initialized
+  private static Random r;// = new Random(); // Only the first time it is initialized
 
 
   // CONSTRUCTOR - FILL UP THE CONTENTS
-  public Chromosome(int length)
+  public Chromosome(int length,int indiNo)
   {
 
     alleles = new byte[length];
     L = length;
+    r=new Random(indiNo);
     for (int i=0; i<length; i++){
     //if(r.nextDouble()>0.5)          // Returns values in [0..1]
     //alleles[i] = 1;
